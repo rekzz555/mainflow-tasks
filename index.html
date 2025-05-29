@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TinyTots World</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff5f7;
+    }
+
+    header {
+      background-color: #ffdee9;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+    }
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff69b4;
+      margin-right: 40px;
+      margin-left: 30px;
+    }
+
+    nav {
+      margin-left: 550px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 35px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li:first-child {
+      margin-left: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+      display: block;
+    }
+
+    nav > ul > li > a:hover,
+    nav > ul > li > a:focus {
+      background-color: #fff;
+      color: #ff69b4;
+    }
+
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 200px;
+      background-color: #fff0f5;
+      padding: 0;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+      z-index: 100;
+    }
+
+    nav ul li:hover > ul,
+    nav ul li:focus-within > ul {
+      display: block;
+    }
+
+    nav ul ul li {
+      margin: 0;
+      width: 100%;
+    }
+
+    nav ul ul a {
+      display: block;
+      padding: 14px 20px;
+      color: #333;
+      background: none;
+      border-radius: 0;
+      font-size: 16px;
+      transition: background 0.2s, color 0.2s;
+      text-align: left;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    nav ul ul a:hover,
+    nav ul ul a:focus {
+      background-color: #ff69b4;
+      color: #fff;
+      border-radius: 0;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1581579185169-7c968b6b2aeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGJhYnl8ZW58MHx8fHwxNjg2NzAzMjg0&ixlib=rb-4.0.3&q=80&w=1200') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 20px 10px; /* Reduced padding */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px; /* Optional: reduce min-height too */
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      color: lch(66.23% 73.46 333.06);
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .cta-btn {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #ff1493;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 60px 30px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .features h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      color: #ff69b4;
+      margin-top: -30px;
+    }
+
+    .feature-items {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background-color: #ffeef8;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #ff1493;
+    }
+
+    .feature p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ffdee9;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    footer a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .feature-items {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: 32px;
+      }
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">TinyTots</div>
+    <nav>
+      <ul>
+        <li><a href="indexx.html">Home</a></li>
+        <li>
+          <a href="#">Features</a>
+          <ul>
+            <li><a href="#">Soft Cotton Clothes</a></li>
+            <li><a href="#">Eco-Friendly Toys</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Services</a>
+          <ul>
+            <li><a href="#">Free Delivery</a></li>
+            <li><a href="#">Gift Wrapping</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to TinyTots</h1>
+    <p>Discover adorable clothing and safe toys for your little ones</p>
+    <button class="cta-btn">Get Started</button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Our Best Picks</h2>
+    <div class="feature-items">
+      <div class="feature">
+        <h3>Soft Baby Clothes</h3>
+        <p>Made from 100% organic cotton to keep your baby comfy and happy.</p>
+      </div>
+      <div class="feature">
+        <h3>Educational Toys</h3>
+        <p>Fun and learning go hand in hand with our colorful toy collection.</p>
+      </div>
+      <div class="feature">
+        <h3>Seasonal Discounts</h3>
+        <p>Enjoy year-round savings and bundle offers for every occasion.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 TinyTots World. All rights reserved. |
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Service</a>
+  </footer>
+</body>
+</html>
+
